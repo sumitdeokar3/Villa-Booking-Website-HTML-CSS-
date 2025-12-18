@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | PCOD Tracker</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background: linear-gradient(to bottom right, #fbecec, #fde5e5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      width: 90%;
+      max-width: 350px;
+    }
+    .login-container h2 {
+      text-align: center;
+      color: #d63384;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .btn {
+      width: 100%;
+      background-color: #d63384;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #c2185b;
+    }
+    .note {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Welcome 🇮🇳</h2>
+    <form>
+      <label for="mobile">Mobile Number</label>
+      <input type="tel" id="mobile" placeholder="Enter 10-digit mobile" maxlength="10" required />
+
+      <label for="password">Password / OTP</label>
+      <input type="password" id="password" placeholder="Enter password or OTP" required />
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <div class="note">
+      New user? Register from home screen.<br>
+      🇮🇳 For Indian users only
+    </div>
+  </div>
+</body>
+</html>

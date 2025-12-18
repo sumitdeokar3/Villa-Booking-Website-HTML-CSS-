@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DewDrop</title>
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link rel="icon" type="image/png" href="../image/happyholidays.jpg">
+    <style>  body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+
+   nav a:hover {
+  color: #c70039; 
+  cursor:pointer;
+}
+
+    .social-icons {
+      height: 20px;
+      margin-right: 100px;
+      gap: 100px;
+      cursor: pointer;
+    }
+
+    .content {
+      margin-top: 80px; /* space for fixed header */
+      padding: 20px;
+    }
+
+
+    /* main  */
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.villa-header-image img {
+  width: 100%;
+  height: 1000px;
+  
+}
+
+.villa-info {
+  padding: 30px;
+  text-align: center;
+}
+
+.villa-location {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  font-size: 14px;
+}
+
+.villa-name {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.villa-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  color: #444;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.villa-highlights {
+  background-color: #f8f8f8;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.villa-highlights h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.highlight-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .highlight-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .highlight-card {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 40px 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .highlight-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .highlight-card i {
+      font-size: 40px;
+      color: #000;
+      margin-bottom: 15px;
+    }
+
+    .highlight-card p {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #111;
+    }
+
+
+
+h2 {
+      font-size: 35px;
+      margin-bottom: 20px;
+      text-decoration: underline;
+      color: red;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .gallery img {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery img {
+        width: 100%;
+      }
+    }
+
+
+
+/* map  */
+ .location {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .map-section {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .map-section h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .map-frame {
+      width: 100%;
+      max-width: 1000px;
+      height: 450px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+.arrival-departure {
+  margin-top: 50px;
+  padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+}
+
+.arrival-departure h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.time-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.time-item .icon {
+  font-size: 20px;
+  margin-left: 600px;
+}
+
+
+
+    </style>
+</head>
+<body>
+      <header>
+    <div class="logo">HAPPY<span style="color:#c70039">H</span>OLIDAYS</div>
+    <nav>
+        <a href="../project_html-css/project.html">Home</a>
+      <a href="../project_html-css/dewdrop.html">Dew Drop Villa</a>
+      <a href="../project_html-css/sky.html" class="active">Sky villa</a>
+      <a href="../project_html-css/AlphaZVilla.html">AlphaZ Villa</a>
+      <a href="../project_html-css/Experiences.html">Experiences</a>
+      <a href="../project_html-css/contactus.html">Contact</a>
+    </nav>
+    <div class="social-icons">
+     <i class="fa-brands fa-facebook"></i>
+     <i class="fa-brands fa-instagram"></i>
+    </div>
+  </header>
+
+<!-- main -->
+
+  <div class="villa-header-image">
+    <img src="../project_html-css/projectimg/karjat1.jpeg" alt="Villa Image">
+  </div>
+
+  <!-- Villa Info Section -->
+  <section class="villa-info">
+    <p class="villa-location">Villa In Karjat, MAHARASHTRA</p>
+    <h1 class="villa-name">Dew Drop Villa</h1>
+
+    <div class="villa-meta">
+      <span>🏠 Entire Villa</span>
+      <span>👥 12 Guests</span>
+      <span>🛏️ 4 Bedrooms</span>
+      <span>🍽️ Meals Available at Additional Charge</span>
+    </div>
+  </section>
+
+  <h2>Villa Highlights</h2>
+
+  <div class="highlight-container">
+    <div class="highlight-card">
+      <i class="fas fa-mountain"></i>
+      <p>Hilltop Villa</p>
+    </div>
+    <div class="highlight-card">
+      <i class="fas fa-tree"></i>
+      <p>Valley View</p>
+    </div>
+    <div class="highlight-card">
+      <i class="fas fa-swimmer"></i>
+      <p>Swimming Pool</p>
+    </div>
+    <div class="highlight-card">
+      <i class="fas fa-baseball-ball"></i>
+      <p>Cricket Turf</p>
+    </div>
+    <div class="highlight-card">
+      <i class="fas fa-utensils"></i>
+      <p>Private Chef</p>
+    </div>
+    <div class="highlight-card">
+      <i class="fas fa-running"></i>
+      <p>Jogging Track</p>
+    </div>
+  </div>
+
+
+  
+  
+  <h2>Gallery</h2>
+
+  <div class="gallery">
+    <img src="../project_html-css/projectimg/karjat1.jpeg" alt="Villa 1">
+    <img src="../project_html-css/projectimg/karjat1a.jpeg" alt="Villa 2">
+    <img src="../project_html-css/projectimg/karjat1b.jpeg" alt="Villa 3">
+    <img src="../project_html-css/projectimg/karjat1c.jpeg" alt="Villa 4">
+    <!-- <img src="https://via.placeholder.com/300x180?text=Villa+5" alt="Villa 5"> -->
+  </div>
+ 
+
+
+   <div class="map-section">
+    <h2>Location</h2>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.780228350476!2d73.44621077519648!3d18.72002498241269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be80390c93a0f3d%3A0x737afaad9ab9f789!2sVilla%20Dew%20Drop!5e1!3m2!1sen!2sin!4v1753513790691!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  
+
+<div class="arrival-departure">
+  <h2>Arrival And Departure</h2>
+  <div class="time-item">
+    <span class="icon">🕒</span>
+    <span>Check-in from 2:00 pm</span>
+  </div>
+  <div class="time-item">
+    <span class="icon">🕒</span>
+    <span>Check-out by 11:00 am</span>
+  </div>
+</div>
+
+  <footer style="background-color: #1a1a1a; color: #f1f1f1; padding: 20px 40px; font-family: sans-serif;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center;">
+
+    <div style="flex: 1; min-width: 180px;">
+      <h2 style="margin: 0; font-size: 20px;">Happy Holidays</h2>
+      <p style="margin: 5px 0; font-size: 14px;">Escape to the perfect villa – Karjat, Lonavala & more</p>
+    </div>
+
+    <div style="flex: 1; min-width: 180px; text-align: center;">
+            <a href="../project_html-css/project.html" style="color: #ff0000; margin: 0 10px; text-decoration: none;">Home</a>
+      <a href="#" style="color: #f1f1f1; margin: 0 10px; text-decoration: none;">Villas</a>
+      <a href="../project_html-css/contactus.html" style="color: #ff0000; margin: 0 10px; text-decoration: none;">Contact</a>    </div>
+
+    <div style="flex: 1; min-width: 180px; text-align: right;">
+      <p style="margin: 5px 0; font-size: 14px;">📞 +91 XXXXXX8888</p>
+      <p style="margin: 5px 0; font-size: 14px;">📍 Mumbai, India</p>
+    </div>
+
+  </div>
+
+  <hr style="margin: 15px 0; border-color: #333;">
+  <p style="text-align: center; font-size: 12px; margin: 0;">&copy; 2025 Happy Holidays |</p>
+</footer>
+
+
+</body>
+</html>

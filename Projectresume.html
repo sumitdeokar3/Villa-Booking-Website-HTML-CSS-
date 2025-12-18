@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidtest Tools</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8e9, #fff3e0);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff6f61, #ffca28);
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .tool-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border-top: 6px solid;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.2);
+    }
+
+    .tool-card:nth-child(1) { border-color: #42a5f5; }
+    .tool-card:nth-child(2) { border-color: #66bb6a; }
+    .tool-card:nth-child(3) { border-color: #ff7043; }
+    .tool-card:nth-child(4) { border-color: #ab47bc; }
+    .tool-card:nth-child(5) { border-color: #26c6da; }
+    .tool-card:nth-child(6) { border-color: #ef5350; }
+    .tool-card:nth-child(7) { border-color: #ffa726; }
+    .tool-card:nth-child(8) { border-color: #8d6e63; }
+    .tool-card:nth-child(9) { border-color: #7e57c2; }
+    .tool-card:nth-child(10){ border-color: #29b6f6; }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #444;
+      border-left: 4px solid currentColor;
+      padding-left: 8px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    textarea { resize: none; }
+
+    button {
+      background: #ff6f61;
+      color: white;
+      border: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    button:hover {
+      background: #e64a19;
+      transform: scale(1.03);
+    }
+
+    p {
+      font-weight: 600;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 8px;
+      background: #f1f8e9;
+      margin: 5px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    li:hover {
+      background: #dcedc8;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      padding: 15px;
+      background: #333;
+      color: #fff;
+      font-size: 14px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>✨ Sumit's MultiHub ✨</header>
+
+  <div class="container">
+
+    <!-- 1. Count Vowels -->
+    <div class="tool-card">
+      <h2>1. Count Vowels</h2>
+      <input id="textv" type="text" placeholder="Enter text here...">
+      <button onclick="vowels()">Check vowels</button>
+      <p id="result"></p>
+    </div>
+
+    <!-- 2. Simple Calculator -->
+    <div class="tool-card">
+      <h2>2. Simple Calculator</h2>
+      <input id="a" type="number" placeholder="1st Number">
+      <input id="b" type="number" placeholder="2nd Number">
+      <button onclick="calc('+')">➕ Add</button>
+      <button onclick="calc('-')">➖ Subtract</button>
+      <button onclick="calc('*')">✖ Multiply</button>
+      <button onclick="calc('/')">➗ Divide</button>
+      <p id="calcResult"></p>
+    </div>
+
+    <!-- 3. To Do List -->
+    <div class="tool-card">
+      <h2>3. To Do List</h2>
+      <input id="task" placeholder="Enter your task...">
+      <button onclick="addTask()">Add Task</button>
+      <ul id="todoList"></ul>
+    </div>
+
+    <!-- 4. Second Largest Number -->
+    <div class="tool-card">
+      <h2>4. Find Second Largest Number</h2>
+      <input id="arrInput" placeholder="Enter numbers separated by commas">
+      <button onclick="secondLargest()">Find Second Largest</button>
+      <p id="secondResult"></p>
+    </div>
+
+    <!-- 5. Palindrome Checker -->
+    <div class="tool-card">
+      <h2>5. Palindrome Checker</h2>
+      <input id="palInput" placeholder="Enter word or phrase">
+      <button onclick="checkPal()">Check</button>
+      <p id="palResult"></p>
+    </div>
+
+    <!-- 6. Number Guessing Game -->
+    <div class="tool-card">
+      <h2>6. Number Guessing Game</h2>
+      <input id="guess" type="number" placeholder="Guess between 1-10">
+      <button onclick="checkGuess()">Check</button>
+      <p id="guessResult"></p>
+    </div>
+
+    <!-- 7. Word Counter -->
+    <div class="tool-card">
+      <h2>7. Word Counter Tool</h2>
+      <textarea id="para" rows="3" placeholder="Type your paragraph here..."></textarea>
+      <button onclick="countWords()">Count</button>
+      <p id="wordCount"></p>
+    </div>
+
+    <!-- 8. Reverse a String -->
+    <div class="tool-card">
+      <h2>8. Reverse a String</h2>
+      <input id="revInput" placeholder="Enter text to reverse">
+      <button onclick="reverse()">Reverse</button>
+      <p id="revResult"></p>
+    </div>
+
+    <!-- 9. Even Odd Checker -->
+    <div class="tool-card">
+      <h2>9. Even Odd Checker</h2>
+      <input id="evenOddInput" type="number" placeholder="Enter a number">
+      <button onclick="checkEvenOdd()">Check</button>
+      <p id="evenOddResult"></p>
+    </div>
+
+    <!-- 10. Sum of Digits -->
+    <div class="tool-card">
+      <h2>10. Sum of Digits</h2>
+      <input id="digitSumInput" placeholder="Enter number">
+      <button onclick="sumDigits()">Sum Digits</button>
+      <p id="digitSumResult"></p>
+    </div>
+
+  </div>
+
+  <footer>© 2025  | Designed by ❤️ Sumit Deokar for Practice & Fun</footer>
+
+  <!-- ===== Scripts ===== -->
+  <script>
+    // 1. Count Vowels
+    function vowels(){
+      const text = document.getElementById("textv").value.toLowerCase();
+      const vowelSet = "aeiou";
+      let count = 0;
+      for (let char of text) {
+        if (vowelSet.includes(char)) count++;
+      }
+      document.getElementById("result").textContent = `Total Vowels: ${count}`;
+    }
+
+    // 2. Calculator
+    function calc(op) {
+      let x = +document.getElementById("a").value;
+      let y = +document.getElementById("b").value;
+      if (isNaN(x) || isNaN(y)) return;
+      let res = eval(`${x} ${op} ${y}`);
+      document.getElementById("calcResult").innerText = "Result: " + res;
+    }
+
+    // 3. To Do List
+    function addTask() {
+      const task = document.getElementById("task").value;
+      if (task === "") return;
+      const li = document.createElement("li");
+      li.textContent = task;
+      li.onclick = () => li.remove();
+      document.getElementById("todoList").appendChild(li);
+      document.getElementById("task").value = "";
+    }
+
+    // 4. Second Largest
+    function secondLargest() {
+      let arr = document.getElementById("arrInput").value.split(',').map(Number);
+      let unique = [...new Set(arr)].sort((a, b) => b - a);
+      document.getElementById("secondResult").innerText = "Second Largest: " + (unique[1] ?? "Not enough elements");
+    }
+
+    // 5. Palindrome
+    function checkPal() {
+      let str = document.getElementById("palInput").value.toLowerCase().replace(/[\W_]/g, '');
+      let reversed = str.split('').reverse().join('');
+      document.getElementById("palResult").innerText = str === reversed ? "Palindrome" : "Not Palindrome";
+    }
+
+    // 6. Number Guessing
+    const secret = Math.floor(Math.random() * 10) + 1;
+    function checkGuess() {
+      let guess = +document.getElementById("guess").value;
+      document.getElementById("guessResult").innerText = guess === secret ? "🎉 Correct!" : "❌ Try Again!";
+    }
+
+    // 7. Word Counter
+    function countWords() {
+      let text = document.getElementById("para").value.trim();
+      let words = text.split(/\s+/).filter(w => w);
+      document.getElementById("wordCount").innerText = `Words: ${words.length}, Characters: ${text.length}`;
+    }
+
+    // 8. Reverse String
+    function reverse() {
+      let str = document.getElementById("revInput").value;
+      document.getElementById("revResult").innerText = str.split('').reverse().join('');
+    }
+
+    // 9. Even Odd Checker
+    function checkEvenOdd() {
+      let n = +document.getElementById("evenOddInput").value;
+      document.getElementById("evenOddResult").innerText = n % 2 === 0 ? "✅ Even" : "🔹 Odd";
+    }
+
+    // 10. Sum of Digits
+    function sumDigits() { 
+      let num = document.getElementById("digitSumInput").value;
+      let sum = [...num].reduce((a, b) => a + +b, 0);
+      document.getElementById("digitSumResult").innerText = "Sum of Digits: " + sum;
+    }
+  </script>
+
+</body>
+</html>
